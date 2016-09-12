@@ -1,0 +1,93 @@
+<div class="container search-page">
+
+  <div class="row margin-top-40 margin-bottom-40">
+
+    <aside class="col-md-3 col-sm-4 hidden-xs categorias-menu">
+    <ec-menusub class="sidebar-menu ">Categorias</ec-menusub>
+    </aside>
+
+    <div class="col-xs-12 col-sm-8 col-md-9" ng-hide="searchCtrl.list.length > 0">
+      <div class="items-info">
+        <h4 class="col-xs-12 text-center">
+          Sua busca por
+          "<span ng-bind="settings.searchword || searchCtrl.myWord"></span>"
+           não retornou nenhum resultado
+        </h4>
+      </div>
+    </div>
+
+    <div class="col-md-9 col-sm-8 col-xs-12" ng-show="searchCtrl.list.length > 0">
+      <h3 class="text-center">
+        Resultados de busca por
+        "{{settings.searchword || searchCtrl.myWord}}"
+      </h3>
+      <div class="items-info">
+        <h4 class="col-xs-12 col-sm-7">
+          Resultado(s)
+          {{searchCtrl.listInfo.intervalBegin}} -
+          {{searchCtrl.listInfo.intervalEnd}} de
+          {{searchCtrl.listInfo.totalResult}} produtos
+        </h4>
+        <div class="col-xs-12 col-sm-5">
+          <div class="search-list-sort pull-right">
+            <span>Exibir:</span>
+            <select class="form-control"
+                    ng-init="settings.selectItemPerPage.selected.value"
+                    ng-model="settings.selectItemPerPage.selected"
+                    ng-change="listCtrl.changeFirst()"
+                    ng-options="opt as opt.label for opt in settings.selectItemPerPage.values">
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <main class="product-list" ng-show="searchCtrl.list.length > 0">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="product in searchCtrl.list" >
+            <div class="product-item">
+            <div class="pi-img-wrapper">
+              <ec-sticker></ec-sticker>
+              <a href="produto/{{product.name | noaccentuation}}/{{product.id}}">
+                <!-- <img alt="{{product.name}}" class="img-responsive" ng-src="{{product.thumbnail}}"> -->
+                <ec-imgproduto></ec-imgproduto>
+                <!-- <img alt="{{product.name}}" class="img-responsive" src="custom/img/product-img.jpg"> -->
+              </a>
+            </div>
+            <div class="product-description">
+              <h3>
+                <a href="produto/{{product.name | noaccentuation}}/{{product.id}}" ng-bind="product.name"></a>
+              </h3>
+            </div>
+            <ec-productprices class="product-prices" product="product" showpricefrom="true" showinstallment="true"></ec-productprices>
+
+            <div class="addcart">
+              <ec-fastaddcart product="product">
+                Comprar
+              </ec-fastaddcart>
+            </div>
+          </div>
+          </div>
+          </div>
+          <div class="product-pagination">
+            <pagination boundary-links="false"
+            ng-change="searchCtrl.pageChanged()"
+            items-per-page="settings.numPerPage"
+            total-items="searchCtrl.listInfo.totalResult"
+            max-size="5"
+            rotate="true"
+            ng-model="searchCtrl.currentPage"
+            class="pagination"
+            previous-text="&lsaquo;"
+            next-text="&rsaquo;"
+            first-text="&laquo;"
+            last-text="&raquo;">
+          </pagination>
+        </div>
+        </div>
+
+
+    </main>
+
+    </div>
+  </div>
+</div>

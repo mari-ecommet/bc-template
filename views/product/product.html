@@ -1,0 +1,154 @@
+<div class="product-page">
+  <div class="product-bg">
+    <h4 ng-bind="productCtrl.product.storeCategoryTreeList[0].name"></h4>
+    <ec-catlink></ec-catlink>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="product">
+      <div class="col-xs-12 col-sm-6">
+        <div class="main-image">
+          <ec-sticker></ec-sticker>
+          <ec-imgprodutozoom class="product-img" responsive="true"></ec-imgprodutozoom>
+        </div>
+        <ec-slider
+          class="hidden-xs"
+          infinite="true"
+          slides-to-scroll="1"
+          slides-to-show="3"
+          vertical-swiping="false"
+          vertical="false">
+          <ec-sliderthumbs></ec-sliderthumbs>
+        </ec-slider>
+        <div class="col-xs-12 visible-xs col-sm-12 col-md-6">
+
+            <div class="hidden-last">
+              <ec-slider dots="true" infinite="true" arrows="false" slides-to-scroll="1" slides-to-show="3" vertical-swiping="false" vertical="false">
+                <ec-sliderthumbs></ec-sliderthumbs>
+              </ec-slider>
+
+            </div>
+            <div class="visible-last">
+              <ec-slider dots="true" arrows="false" infinite="true" slides-to-scroll="1" slides-to-show="2" vertical-swiping="false" vertical="false">
+                <ec-sliderthumbs></ec-sliderthumbs>
+              </ec-slider>
+
+            </div>
+
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+
+        <div class="product-information clearfix">
+          <h1>
+            <ec-prodtitle></ec-prodtitle>
+          </h1>
+          <div class="small-description">
+            <p>
+              <ec-smalldescription></ec-smalldescription>
+            </p>
+            <p>
+              <ec-information></ec-information>
+            </p>
+          </div>
+
+          <ec-productprices billetDiscount="true" class="product-prices pull-left" product="productCtrl.product" showinstallment="true" showpricefrom="true" textpricefrom="" textpriceto=""></ec-productprices>
+          <div class="product-quantidade pull-right">
+            <ec-addcartmodal>COMPRAR</ec-addcartmodal>
+          </div>
+          <div class="clearfix"></div>
+          <div class="product-variation" ng-show="productCtrl.product.variationObject.possuiVariacao">
+            <ec-sku></ec-sku>
+          </div>
+            <div class="product-frete pull-left">
+                <ec-getfrete >OK</ec-getfrete>
+            </div>
+            <ul class="redes-sociais pull-right">
+              <li><a href="" class="fa fa-facebook"></a></li>
+              <li><a href="" class="fa fa-instagram"></a></li>
+              <li><a href="" class="fa fa-twitter"></a></li>
+            </ul>
+
+        </div>
+
+        <div class="product-options">
+
+
+          <div class="parcelas dropdown" ng-if="productCtrl.product.installments.length > 0">
+
+            <button class="btn btn-xs dropdown-toggle" aria-expanded="true" data-delay="1000" data-toggle="dropdown" type="button">
+              Veja suas parcelas
+              <i class="fa fa-angle-down"></i>
+            </button>
+            <div class="dropdown-menu hold-on-click dropdown-checkboxes" role="menu">
+              <ec-installments></ec-installments>
+
+            </div>
+          </div>
+
+
+          <div class="col-xs-12">
+            <ec-comprejunto>Compre Junto</ec-comprejunto>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="produto-descricao">
+    <div class="container">
+      <div>
+        <h2>
+          Descrição
+        </h2>
+        <div class="description">
+          <ec-description></ec-description>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" ng-show="model6.length > 0">
+    <div class="col-xs-12">
+      <h2>Produtos Relacionados
+      </h2>
+      <ec-owlvitrine autoPlay="true" navigation="true" owlPagination="true" itemsCustom="[[300, 1], [560, 2], [768, 2], [990, 3], [1200, 4]]">
+          <owl-item ng-repeat="product in model6">
+            <div class="product-item">
+              <div class="pi-img-wrapper">
+                <ec-sticker></ec-sticker>
+                <a href="produto/{{product.name | noaccentuation}}/{{product.id}}">
+                  <ec-imgproduto></ec-imgproduto>
+                  <!-- <img alt="{{product.name}}" class="img-responsive" src="custom/img/product-img.jpg"> -->
+                </a>
+              </div>
+              <div class="product-description">
+                <h3>
+                  <a href="produto/{{product.name | noaccentuation}}/{{product.id}}" ng-bind="product.name"></a>
+                </h3>
+              </div>
+              <ec-productprices class="product-prices" product="product" showpricefrom="true" showinstallment="true"></ec-productprices>
+
+              <div class="addcart">
+                <ec-fastaddcart product="product">
+                  Comprar
+                </ec-fastaddcart>
+              </div>
+            </div>
+          </owl-item>
+      </ec-owlvitrine>
+    </div>
+  </div>
+  <div class="marcas">
+    <div class="container">
+      <ec-owlvitrine autoPlay="true" navigation="true" owlPagination="true" itemsCustom="[[300, 1], [768, 4], [1200, 5]]">
+        <owl-item ng-repeat="x in ['akg', 'behringer', 'boss', 'casio', 'ciclotron', 'crafter', 'csr', 'eagle',
+        'epiphone', 'evans', 'fire', 'focusrite', 'fsa', 'gope', 'gretsch', 'hofma', 'JBL', 'kurzweil', 'marshall']">
+          <div class="marcas-img">
+            <a ng-href="busca/{{x}}/1/9"><img ng-src="custom/img/marcas/{{x}}.png"></a>
+          </div>
+        </owl-item>
+      </ec-owlvitrine>
+    </div>
+  </div>
