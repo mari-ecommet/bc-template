@@ -1,3 +1,3 @@
-<div class="home-page" ng-controller="DirectiveFormCtrl">
-  <fullbanner></fullbanner>
+<div class="home-page" ng-controller="DirectiveFormCtrl as ctrl">
+  <fullbanner ng-show="ctrl.getValues('full-banner', 'full-banner_show')"></fullbanner>
 </div>

@@ -11,11 +11,16 @@ WebstoreApp.controller("FormCtrl", [ '$http', function($http){
 WebstoreApp.controller("DirectiveFormCtrl", ["$scope", function($scope){
   console.log("new controller")
   var self = this;
-  $scope.options = "oi"
-  $scope.customOptions =[
+  self.customOptions =[
   {
     "item" : "full-banner",
     "value": "true",
     "model": "full-banner_show",
-  }]
+  }];
+  self.customOptions.forEach(function(val){
+    var tag = document.getElementById(val.item);
+    if(val.type == "show")
+  })
+
+
 }]);
