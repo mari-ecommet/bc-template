@@ -1,0 +1,13 @@
+[
+{
+  "item" : "full-banner",
+  "value": "true",
+  "model": "full-banner_show",
+  "className" : "show-banner"
+},
+{
+  "item"  : "product-col",
+  "value" : "3",
+  "model" : "product-col",
+  "className" : "product-col"
+}]

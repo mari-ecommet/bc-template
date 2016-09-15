@@ -8,19 +8,26 @@ WebstoreApp.controller("FormCtrl", [ '$http', function($http){
   });
 
 }]);
-WebstoreApp.controller("DirectiveFormCtrl", ["$scope", function($scope){
+WebstoreApp.controller("DirectiveFormCtrl", ["$scope", "$http", function($scope, $http){
   console.log("new controller")
   var self = this;
-  self.customOptions =[
-  {
-    "item" : "full-banner",
-    "value": "true",
-    "model": "full-banner_show",
-  }];
-  self.customOptions.forEach(function(val){
-    var tag = document.getElementById(val.item);
-    if(val.type == "show")
-  })
+
+  $http.get("tema/customize/json/customOptions.json")
+  .then(function(result){
+    console.log(result)
+    result.data.forEach(function(val){
+      var classe = ("." + val.item)
+      var tag = $(classe);
+      if(tag){
+        tag.addClass(val.className +"-"+ val.value)
+      }
+    })
+  }, function(err){
+
+  });
+
+
+
 
 
 }]);
