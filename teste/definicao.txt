@@ -1,0 +1,40 @@
+form.json:
+
+[
+{
+  "item" : "tituloPrincipal"
+  "chave" : "tituloPrincipal_color",
+  "label": "Cor do Título"
+  "valor" : "#000000",
+  "atributo" : "color"
+}
+]
+
+saida.json:
+[
+  {
+    "atributo" : "color"
+    "item" : "tituloPrincipal"
+    "chave" : "tituloPrincipal_color",
+    "valor" : "#00ff00"
+  }
+]
+
+result.sass:
+
+
+$chave_atributo = valor
+$tituloPrincipal_color = #00ff00
+
+result.css:
+.item{
+  atributo : valor
+}
+.tituloPrincipal{
+  color: #00ff00
+}
+
+
+
+
+<input type="text" ng-value="" ng-model="" />

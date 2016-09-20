@@ -1,0 +1,16 @@
+[
+  {
+    "item" : "corPrincipal",
+    "atributos" : ["color","background-color"],
+    "chave" : "corPrincipal_color",
+    "valor" : "#ff0000",
+    "label" : "Cor Principal"
+  },
+  {
+    "item" : "corPrincipal",
+    "atributo" : "background-color",
+    "chave" : "corPrincipal_background-color",
+    "valor" : "#ff0000",
+    "label" : "Cor Principal"
+  }
+]

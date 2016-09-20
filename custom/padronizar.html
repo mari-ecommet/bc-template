@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Personalizar sua Becommerce</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  </head>
+  <body ng-app="CustomApp">
+    <div ng-controller="CustomCssController as ctrl" class="container">
+
+      <component type="radio"></component>
+      <component type="radios"></component>
+
+      <form class="" ng-submit="ctrl.submit()">
+        <div class="form-group" ng-repeat="item in ctrl.formItems">
+          <label class="" for="{{item.chave}}" ng-bind="item.label"></label>
+          <input ng-init="ctrl.result[$index].chave = item.chave" ng-value="item.chave" ng-model="ctrl.result[$index].chave" type="hidden">
+          <input ng-init="ctrl.result[$index].atributo = item.atributo" ng-value="item.atributo" ng-model="ctrl.result[$index].atributo" type="hidden">
+          <input ng-init="ctrl.result[$index].item = item.item" ng-value="item.item" ng-model="ctrl.result[$index].item" type="hidden">
+          <input class="form-control" ng-value="ctrl.result[$index].valor" ng-init="ctrl.result[$index].valor = item.valor" name="{{item.chave}}" ng-model="ctrl.result[$index].valor" type="text">
+        </div>
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
+    <script src="https://www.promisejs.org/polyfills/promise-done-7.0.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
