@@ -1,13 +1,12 @@
-var customApp = angular.module("CustomApp", []);
-
-
-customApp.controller("CustomCssController", ['$http', function($http){
+customApp.controller("CustomCssController", ['$scope', '$http', 'layoutSettings', function($scope, $http, layoutSettings){
   var self = this;
 
-  self.result = [];
+  $scope.sets = layoutSettings.sets;
+  $scope.result = [];
 
-  self.formItems = [
+  $scope.formItems = [
     {
+      "item" : "titulo",
       "atributo" : ["color", "background-color"],
       "chave" : "corPrincipal",
       "valor" : "#ff0000",
@@ -32,6 +31,7 @@ customApp.controller("CustomCssController", ['$http', function($http){
       "item" : "sidebar",
       "chave" : "displaySidebar",
       "valor" : "block",
+      "tipo" : "radio",
       "label" : "Mostra Sidebar"
     },
     {
@@ -39,16 +39,17 @@ customApp.controller("CustomCssController", ['$http', function($http){
       "item" : "product",
       "chave" : "colProduto",
       "valor" : "33%",
+      "tipo" : "coluna",
       "label" : "Número de Colunas de Produtos"
     },
   ]
 
-  self.submit = function(){
-    console.log(self.result);
+  $scope.submit = function(){
+    // console.log(self.result);
 
 
-    self.result.forEach(function(val, key){
-
+    $scope.result.forEach(function(val, key){
+      console.log(val ,key)
       var atributos = val.atributo;
       if(atributos.constructor === Array){
         atributos.forEach(function(a, i){
@@ -63,14 +64,3 @@ customApp.controller("CustomCssController", ['$http', function($http){
   }
 
 }])
-.directive("component", function(){
-return{
-    restrict: 'E',
-    replace:true,
-    transclude:false,
-    scope: {
-      type: '@?type'
-    },
-    templateUrl: 'inputType.html'
-  }
-});
