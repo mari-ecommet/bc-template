@@ -1,0 +1,7 @@
+<carousel interval="myInterval" ng-if="sets.show">
+  <slide active="slide.active" ng-repeat="banner in banners">
+    <a ng-href="{{banner.href}}">
+      <img ng-src="{{banner.image}}">
+    </a>
+  </slide>
+</carousel>

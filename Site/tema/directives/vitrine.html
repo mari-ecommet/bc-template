@@ -1,4 +1,5 @@
 <div  ng-if="sets.show">
+  
   <h2 ng-bind="sets.nome"></h2>
   <ec-owlvitrine
   autoPlay="true"
@@ -6,26 +7,7 @@
   owlPagination="true"
   itemsCustom="{{sets.items}}">
       <owl-item ng-repeat="product in modelo">
-        <div class="product-item">
-        <div class="pi-img-wrapper">
-          <ec-sticker></ec-sticker>
-          <a href="produto/{{product.name | noaccentuation}}/{{product.id}}">
-            <ec-imgproduto></ec-imgproduto>
-          </a>
-        </div>
-        <div class="product-description">
-          <h3>
-            <a href="produto/{{product.name | noaccentuation}}/{{product.id}}" ng-bind="product.name"></a>
-          </h3>
-        </div>
-        <ec-productprices class="product-prices" product="product" showpricefrom="true" showinstallment="true"></ec-productprices>
-
-        <div class="addcart">
-          <ec-fastaddcart product="product">
-            ADICIONAR AO CARRINHO
-          </ec-fastaddcart>
-        </div>
-      </div>
+        <product></product>
     </owl-item>
   </ec-owlvitrine>
 </div>

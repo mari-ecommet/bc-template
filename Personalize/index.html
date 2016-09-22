@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Personalizar sua Becommerce</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="plugins/colorpicker/colorpicker.min.css" media="screen" title="no title">
+  </head>
+  <body ng-app="CustomApp">
+    <div ng-controller="MainController as ctrl" class="container">
+
+
+      <form class="" ng-submit="submit()">
+        <div class="form-group" ng-repeat="(index, item) in formItems">
+
+          <label class="" for="{{item.chave}}" ng-bind="item.label"></label>
+          <input ng-init="result[index].chave = item.chave" ng-value="item.chave" ng-model="result[index].chave" type="hidden">
+          <input ng-init="result[index].atributo = item.atributo" ng-value="item.atributo" ng-model="result[index].atributo" type="hidden">
+          <input ng-init="result[index].item = item.item" ng-value="item.item" ng-model="result[index].item" type="hidden">
+
+          <!-- <input type="text" colorpicker="hex" ng-init="result[$index].valor = item.valor" ng-value="item.valor" ng-model="result[$index].valor" > -->
+          <component></component>
+
+        </div>
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" charset="utf-8"></script>
+    <script src="https://www.promisejs.org/polyfills/promise-done-7.0.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="customApp/app.js" charset="utf-8"></script>
+
+
+
+
+    <!-- <script src="../scripts/component.js" charset="utf-8"></script>
+    <script src="../scripts/services.js" charset="utf-8"></script>
+    <script src="../scripts/controllers.js" charset="utf-8"></script>
+    <script src="../scripts/directives.js" charset="utf-8"></script> -->
+    <script src="plugins/colorpicker/bootstrap-colorpicker-module.min.js" charset="utf-8"></script>
+
+  </body>
+</html>

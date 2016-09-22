@@ -1,0 +1,25 @@
+<div class="product-item">
+  <div class="pi-img-wrapper">
+    <div class="add2cart product-hover">
+      <a class="add-cart" href="produto/{{product.name | noaccentuation}}/{{product.id}}">
+        <button><span class="ng-scope">COMPRAR</span></button>
+      </a>
+      <!-- <ec-fastaddcart class="add-cart" product="product">COMPRAR</ec-fastaddcart> -->
+      <a  class="view-icon" href="produto/{{product.name | noaccentuation}}/{{product.id}}">
+        <span> VISUALIZAR </span>
+      </a>
+    </div>
+    <ec-sticker></ec-sticker>
+    <a href="produto/{{product.name | noaccentuation}}/{{product.id}}">
+      <img alt="{{product.name}}" class="img-responsive" ng-src="{{product.thumbnail}}">
+      <!-- <img alt="{{product.name}}" class="img-responsive" src="custom/img/product-img.jpg"> -->
+    </a>
+
+  </div>
+  <div class="product-description">
+    <h3>
+      <a href="produto/{{product.name | noaccentuation}}/{{product.id}}" ng-bind="product.name"></a>
+    </h3>
+    <ec-productprices class="product-prices" product="product" showpricefrom="true" textpricefrom="" textpriceto=""></ec-productprices>
+  </div>
+</div>

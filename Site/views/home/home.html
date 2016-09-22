@@ -1,10 +1,13 @@
 <div class="home-page">
-  <fullbanner></fullbanner>
+  <banner banners="slides" sets="settings.templateConfigurations.fullBanner"></banner>
 
   <div class="container">
     <carouseldemarcas></carouseldemarcas>
     <div class="sidebar col-xs-12 col-sm-6 col-md-4" ng-show="settings.templateConfigurations.sidebar.show">
 
+      <ec-sidemenu></ec-sidemenu>
+      <ec-sidelist></ec-sidelist>
+      
     </div>
     <div class="col-xs-12 mainContent"
         ng-class="{'col-sm-6 col-md-8' : settings.templateConfigurations.sidebar.show }">
@@ -12,7 +15,18 @@
     </div>
 
     <div class="col-xs-12">
+      <div class="row">
+        <vitrine-principal></vitrine-principal>
+      </div>
 
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <banner banners="listbanners" sets="settings.templateConfigurations.smallBanner"></banner>
+        </div>
+        <div class="colxs-12 col-sm-6">
+          <banner banners="vertical" sets="settings.templateConfigurations.verticalBanner"></banner>
+        </div>
+      </div>
 
     </div>
   </div>

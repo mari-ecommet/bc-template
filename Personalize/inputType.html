@@ -1,0 +1,21 @@
+<div ng-show="item.tipo == 'radio'">
+  <div class="radio" ng-repeat="(i,val) in item.options">
+    <label>{{val.label}}
+
+    <input type="radio"
+    ng-init="result[index].valor = item.valor"
+    ng-model="result[index].valor"
+    value="{{val.valor}}">
+    </label>
+  </div>
+</div>
+
+<div ng-show="item.tipo == 'coluna'">
+
+  <select>
+    <option ng-repeat=""></option>
+  </select>
+
+</div>
+
+<input ng-hide="item.tipo == 'radio'" class="form-control" type="text" colorpicker ng-init="result[$index].valor = item.valor" ng-value="item.valor" ng-model="result[$index].valor">

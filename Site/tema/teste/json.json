@@ -1,12 +1,15 @@
 {
  "templateConfigurations": {
+   "menu" :{
+     "itemsLimit" : 3
+   },
    "fullbanner": {
      "show": true
    },
-   "bannerLateral": {
+   "verticalBanner": {
      "show": true
    },
-   "bannerSmall": {
+   "smallBanner": {
      "show": true
    },
    "carouseldemarcas":{
@@ -30,7 +33,7 @@
      "show": true,
      "colunas": 2
    },
-   "productItem": {
+   "vitrine4": {
      "colunas": 3
    }
  }

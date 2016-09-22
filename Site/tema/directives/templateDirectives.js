@@ -1,7 +1,8 @@
-WebstoreApp.directive("fullbanner", function(){
+WebstoreApp.directive("banner", function(){
   return{
     restrict: "E",
-    templateUrl: 'tema/directives/fullbanner.html'
+    scope: {banners : "=banners", sets : "=sets"},
+    templateUrl: 'tema/directives/banner.html'
 
   }
 })
@@ -17,5 +18,19 @@ WebstoreApp.directive("vitrine", function(){
     restrict: "E",
     scope: {modelo : "=modelo", sets: "=sets"},
     templateUrl: 'tema/directives/vitrine.html'
+  }
+})
+
+WebstoreApp.directive("vitrinePrincipal", function(){
+  return{
+    restrict: "E",
+    templateUrl: 'tema/directives/vitrinePrincipal.html'
+  }
+})
+
+WebstoreApp.directive("product", function(){
+  return{
+    restrict: "E",
+    templateUrl: 'tema/directives/product.html'
   }
 })

@@ -1,0 +1,43 @@
+{
+	"titulo": {
+		"font-family": {
+			"valor": "Open Sans",
+			"label ": "Fonte",
+			"data": {
+				"retorno": "fonte"
+			}
+		},
+		"color": {
+			"valor": "#ff00ff",
+			"label ": "cor da fonte",
+			"data": {
+				"retorno": "hex"
+			}
+		},
+    "font-size": {
+			"valor": "20px",
+			"label ": "Tamanho da fonte",
+			"data": {
+				"retorno": "numero"
+			}
+		}
+	},
+  "sidebar" : {
+    "display" : {
+      "valor" : "block",
+      "label" : "Mostra Sidebar",
+      "data" : {
+        "retorno" : "bool",
+        "opcoes" : ["block", "none"]
+      }
+    },
+    "colunas": {
+      "valor" : "4",
+      "label" : "Tamanho do Sidebar",
+      "data" : {
+        "retorno" : "list",
+        "opcoes" : [1, 2, 3, 4]
+      }
+    }
+  }
+}
