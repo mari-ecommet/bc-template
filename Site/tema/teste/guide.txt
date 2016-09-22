@@ -1,0 +1,6 @@
+$http.get('tema/teste/json.json').then(function(data){
+    var data = data.data;
+    settings.templateConfigurations = data.templateConfigurations;
+});
+
+colocar isso em settings.js no static <3
