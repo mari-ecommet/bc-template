@@ -1,0 +1,100 @@
+<!-- <div class="bg-product">
+
+</div> -->
+<div class="container" >
+
+  <!-- BEGIN SIDEBAR & CONTENT -->
+  <div class="row margin-bottom-40">
+
+    <aside class="col-md-3 col-sm-4 hidden-xs categorias-menu">
+	  <ec-menubyid level='2' only-withproducts='true' class="sidebar-menu margin-bottom-20"></ec-menubyid>
+
+    <ec-menusub class="sidebar-menu ">Categorias</ec-menusub>
+    </aside>
+
+    <div class="col-xs-12 col-sm-8 col-md-9" ng-hide="listCtrl.list.length > 0">
+      <div class="items-info">
+        <ec-breadcrumb></ec-breadcrumb>
+
+        <h4 class="col-xs-12 text-center">
+          Não há produtos nesta categoria
+        </h4>
+      </div>
+    </div>
+    <div class="col-md-9 col-sm-8 col-xs-12" ng-show="listCtrl.list.length > 0">
+      <ec-breadcrumb></ec-breadcrumb>
+
+      <div class="items-info clearfix">
+        <h4 class="col-xs-12 col-sm-7">
+          Resultado(s)
+          {{listCtrl.listInfo.intervalBegin}} -
+          {{listCtrl.listInfo.intervalEnd}} de
+          {{listCtrl.listInfo.totalResult}} produtos
+        </h4>
+        <div class="col-xs-12 col-sm-5">
+          <div class="search-list-sort pull-right">
+            <span>Exibir:</span>
+            <select class="form-control"
+                    ng-init="settings.selectItemPerPage.selected.value"
+                    ng-model="settings.selectItemPerPage.selected"
+                    ng-change="listCtrl.changeFirst()"
+                    ng-options="opt as opt.label for opt in settings.selectItemPerPage.values">
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEGIN PRODUCT LIST -->
+      <div class="product-list row">
+        <div class="col-sm-6 col-md-4 col-xs-12" ng-repeat="product in listCtrl.list">
+          <div class="product-item">
+          <div class="pi-img-wrapper">
+            <ec-sticker></ec-sticker>
+            <a href="produto/{{product.name | noaccentuation}}/{{product.id}}">
+              <ec-imgproduto></ec-imgproduto>
+            </a>
+          </div>
+          <div class="product-description">
+            <h3>
+              <a href="produto/{{product.name | noaccentuation}}/{{product.id}}" ng-bind="product.name"></a>
+            </h3>
+          </div>
+          <ec-productprices class="product-prices" product="product" showpricefrom="true" showinstallment="true"></ec-productprices>
+
+          <div class="addcart">
+            <ec-fastaddcart product="product">
+              ADICIONAR AO CARRINHO
+            </ec-fastaddcart>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-pagination">
+      <pagination boundary-links="false"
+                  ng-change="listCtrl.pageChanged()"
+                  items-per-page="settings.numPerPage"
+                  total-items="listCtrl.listInfo.totalResult"
+                  max-size="5"
+                  rotate="true"
+                  ng-model="listCtrl.currentPage"
+                  class="pagination"
+                  previous-text="&lsaquo;"
+                  next-text="&rsaquo;"
+                  first-text="&laquo;"
+                  last-text="&raquo;">
+      </pagination>
+    </div>
+  </div>
+      <!-- END PRODUCT LIST -->
+
+      <!-- BEGIN PAGINATOR -->
+
+
+      <!-- END PAGINATOR -->
+
+    </div>
+    <!-- END CONTENT -->
+  </div>
+
+  <!-- END SIDEBAR & CONTENT -->
+</div>

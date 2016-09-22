@@ -4,9 +4,10 @@ customApp.controller("CustomCssController", ['$scope', '$http', 'layoutSettings'
   $scope.sets = layoutSettings.sets;
   $scope.result = [];
 
+
   $scope.formItems = [
     {
-      "item" : "titulo",
+      "item" : "principal",
       "atributo" : ["color", "background-color"],
       "chave" : "corPrincipal",
       "valor" : "#ff0000",
@@ -32,6 +33,12 @@ customApp.controller("CustomCssController", ['$scope', '$http', 'layoutSettings'
       "chave" : "displaySidebar",
       "valor" : "block",
       "tipo" : "radio",
+      "options" : [
+        {"valor" : "block",
+        "label": "Sim"},
+        {"valor" : "none",
+        "label": "Não"}
+      ],
       "label" : "Mostra Sidebar"
     },
     {
@@ -45,20 +52,17 @@ customApp.controller("CustomCssController", ['$scope', '$http', 'layoutSettings'
   ]
 
   $scope.submit = function(){
-    // console.log(self.result);
-
-
-    $scope.result.forEach(function(val, key){
-      console.log(val ,key)
-      var atributos = val.atributo;
-      if(atributos.constructor === Array){
-        atributos.forEach(function(a, i){
-          console.log("." + val.chave +"_"+ a + "{" + a + " : " + val.valor + ";}")
-        })
-      }else{
-        console.log("." + val.item + "{" + val.atributo + " : " + val.valor + ";}")
-      }
-    })
+    console.log($scope.result)
+    // $scope.result.forEach(function(val, key){
+    //   var atributos = val.atributo;
+    //   if(atributos.constructor === Array){
+    //     atributos.forEach(function(a, i){
+    //       console.log("." + val.item + "{" + a + " : " + val.valor + ";}")
+    //     })
+    //   }else{
+    //     console.log("." + val.item + "{" + val.atributo + " : " + val.valor + ";}")
+    //   }
+    // })
 
 
   }

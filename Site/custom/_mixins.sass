@@ -1,0 +1,138 @@
+@mixin Inputs
+  border-radius: $border-radius!important
+  border-color: #ebebeb!important
+  color: #111!important
+  font-size: 11px!important
+  font-weight: $light!important
+  padding: 0 15px!important
+  &::-webkit-input-placeholder
+    color: #111
+  &:-moz-placeholder
+    color: #111
+  &::-moz-placeholder
+    color: #111
+  &:-ms-input-placeholder
+    color: #111
+
+@mixin Uppercase($value)
+  text-transform: $value
+  -ms-text-transform: $value
+  -webkit-text-transform: $value
+  text-transform: $value
+
+@mixin tituloPrincipal
+  font-size: 20px
+  color: $base-color
+  font-weight: 900
+  line-height: 1
+  margin: 0 0 15px 0
+  padding: 4px 44px
+  height: 30px
+  position: relative
+  text-align: left
+  font-family: $font-primaria
+  background: url(img/title.png) no-repeat left center
+  @include Uppercase(uppercase)
+  &::after
+    width: calc(100% - 330px)
+    height: 1px
+    position: absolute
+    top: 15px
+    content: ""
+    display: block
+    right: 0
+    background-color: #d7d7d7
+  em, span
+    color: $base-color!important
+    font-weight: 900
+
+@mixin tituloSecundario
+  font-weight: $bold
+  margin: 10px 0
+  color: #1c1d1b
+  text-transform: none
+  padding: 0!important
+  font-size: 20px
+  font-family: $font-primaria
+  &::after, &::before
+    display: none
+
+$setaWidth: 32px
+@mixin Seta
+  opacity: 1
+  height: 25px!important
+  width: 25px!important
+  position: absolute!important
+  z-index: 1
+  border: none!important
+  font-size: 0
+  top: calc(50% - 18px)!important
+  background-size: 50px!important
+  &:hover
+    opacity: 0.5
+
+@mixin SetaNext
+  background-image: url(img/icons/setas.png)!important
+  background-position: right 0!important
+  background-color: transparent!important
+
+@mixin SetaPrev
+  background-image: url(img/icons/setas.png)!important
+  background-position: 0 0!important
+  background-color: transparent!important
+
+@mixin Menu
+  background-color: $secondary-color!important
+  width: 250px!important
+  padding: 20px 0!important
+  border: none
+  text-align: left
+  .header-navigation
+    margin: 0!important
+  li
+    float: none!important
+    display: inline-block
+    min-height: 0!important
+    min-width: 0!important
+    max-height: none!important
+    max-width: none!important
+    transition: none!important
+    &:hover, &:focus
+      background-color: $secondary-color-light
+      transition: none!important
+      > a, > a em, > a small
+        background-color: transparent!important
+        color: #fff!important
+        transition: none!important
+  a
+    font-size: 12px
+    font-family: $font-primaria!important
+    min-height: 0!important
+    min-width: 0!important
+    max-height: none!important
+    max-width: none!important
+    color: #fff!important
+    padding: 10px 5px!important
+    font-weight: 400!important
+    transition: none!important
+    &:hover, &:focus
+      background-color: transparent!important
+  .menu-superior.header-navigation
+    float: none!important
+    width: auto
+    display: inline-block
+  .container
+    text-align: center
+
+
+
+@mixin CarouselDots
+  li
+    border: none!important
+    width: 8px
+    height: 8px
+    background-color: $secondary-color
+    &.active
+      background-color: $primary-color
+      width: 8px
+      height: 8px

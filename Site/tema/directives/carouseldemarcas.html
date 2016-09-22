@@ -1,0 +1,14 @@
+<div>
+<ec-owlvitrine
+  ng-show="settings.templateConfigurations.carouseldemarcas.show"
+  autoPlay="true"
+  navigation="true"
+  owlPagination="true"
+  itemsCustom="{{settings.templateConfigurations.carouseldemarcas.items}}">
+  <owl-item ng-repeat="x in ['logo1', 'logo2', 'logo3', 'logo4', 'logo5', 'logo6', 'logo7']">
+    <div class="marcas-img">
+      <a ng-href="busca/{{x}}/1/9"><img ng-src="custom/img/marcas/{{x}}.png"></a>
+    </div>
+  </owl-item>
+</ec-owlvitrine>
+</div>

@@ -1,0 +1,19 @@
+<div class="home-page">
+  <fullbanner></fullbanner>
+
+  <div class="container">
+    <carouseldemarcas></carouseldemarcas>
+    <div class="sidebar col-xs-12 col-sm-6 col-md-4" ng-show="settings.templateConfigurations.sidebar.show">
+
+    </div>
+    <div class="col-xs-12 mainContent"
+        ng-class="{'col-sm-6 col-md-8' : settings.templateConfigurations.sidebar.show }">
+      <vitrine modelo="model3" sets="settings.templateConfigurations.vitrine1"></vitrine>
+    </div>
+
+    <div class="col-xs-12">
+
+
+    </div>
+  </div>
+</div>

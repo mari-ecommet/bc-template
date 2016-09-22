@@ -1,0 +1,37 @@
+{
+ "templateConfigurations": {
+   "fullbanner": {
+     "show": true
+   },
+   "bannerLateral": {
+     "show": true
+   },
+   "bannerSmall": {
+     "show": true
+   },
+   "carouseldemarcas":{
+     "show": true,
+     "items": [[300, 1], [500, 2], [990, 3], [1200, 5]]
+   },
+   "vitrine1": {
+     "show": true,
+     "items": [[300, 1], [500, 2], [990, 3], [1200, 3]],
+     "nome" : "Novidades da Semana"
+   },
+   "vitrine2": {
+     "show": true,
+     "items": 2
+   },
+   "vitrine3": {
+     "show": true,
+     "items": 5
+   },
+   "sidebar": {
+     "show": true,
+     "colunas": 2
+   },
+   "productItem": {
+     "colunas": 3
+   }
+ }
+}

@@ -1,0 +1,157 @@
+@media (min-width: 768px) {
+  /* line 2, mobile.sass */
+  .footer-main h3 {
+    font-size: 16px; }
+
+  /* line 4, mobile.sass */
+  .fastaddcart .product-page-cart .btn {
+    width: calc(50% - 5px) !important; }
+
+  /* line 7, mobile.sass */
+  .full-banner img {
+    width: 100%; }
+
+  /* line 9, mobile.sass */
+  .banner-small, .banner-lateral {
+    margin: 10px 0 45px;
+    text-align: center;
+    width: calc(50% - 10px); }
+    /* line 13, mobile.sass */
+    .banner-small img, .banner-lateral img {
+      margin: 0 auto;
+      width: 100%; }
+
+  /* line 17, mobile.sass */
+  .welcome .bem-vindo {
+    display: none; }
+
+  /* line 19, mobile.sass */
+  .header-logo {
+    width: 235px;
+    margin-top: 20px; }
+    /* line 22, mobile.sass */
+    .header-logo img {
+      width: 100%;
+      max-width: 309px; }
+
+  /* line 25, mobile.sass */
+  .header-cart {
+    width: 50px; }
+
+  /* line 27, mobile.sass */
+  .search-wrapper {
+    width: calc(100% - 50px - 235px);
+    padding-right: 0;
+    padding-left: 45px; }
+
+  /* line 31, mobile.sass */
+  .header-links {
+    text-align: left !important; }
+    /* line 33, mobile.sass */
+    .header-links li:first-of-type {
+      margin-left: 0; } }
+@media (min-width: 992px) {
+  /* line 36, mobile.sass */
+  .header-links {
+    text-align: right !important; }
+    /* line 38, mobile.sass */
+    .header-links li:first-of-type {
+      margin-left: 20px; }
+
+  /* line 40, mobile.sass */
+  .header-logo {
+    width: 235px;
+    margin-top: 20px; }
+    /* line 43, mobile.sass */
+    .header-logo img {
+      width: 100%;
+      max-width: 309px; }
+
+  /* line 46, mobile.sass */
+  .header-cart {
+    width: 250px; }
+
+  /* line 48, mobile.sass */
+  .search-wrapper {
+    width: calc(100% - 250px - 235px);
+    padding-right: 0;
+    padding-left: 45px; }
+
+  /* line 54, mobile.sass */
+  .purchase-page .col-md-7, .purchase-page .detalhes-compra {
+    width: 50% !important; }
+
+  /* line 56, mobile.sass */
+  .product-page-cart {
+    margin-top: 0; }
+
+  /* line 58, mobile.sass */
+  .product-information {
+    text-align: left;
+    margin-top: 0; }
+
+  /* line 61, mobile.sass */
+  .product-variation, .product-frete {
+    margin-left: 0 !important;
+    margin-right: 0 !important; } }
+@media (min-width: 1200px) {
+  /* line 66, mobile.sass */
+  .footer-main h3 {
+    font-size: 18px; }
+
+  /* line 68, mobile.sass */
+  .header-logo {
+    margin-top: 10px; }
+
+  /* line 70, mobile.sass */
+  .footer-main .margin-top-30 {
+    margin-top: 30px; }
+
+  /* line 72, mobile.sass */
+  .owl-carousel {
+    width: 100% !important;
+    margin: 0 auto; }
+
+  /* line 76, mobile.sass */
+  .slick-slider .owl-prev {
+    left: -35px !important; }
+  /* line 78, mobile.sass */
+  .slick-slider .owl-next {
+    right: -33px !important; }
+
+  /* line 80, mobile.sass */
+  .owl-prev {
+    left: -50px !important; }
+
+  /* line 82, mobile.sass */
+  .owl-next {
+    right: -50px !important; }
+
+  /* line 85, mobile.sass */
+  .welcome .bem-vindo {
+    display: inline-block; }
+
+  /* line 87, mobile.sass */
+  .header-logo {
+    width: 325px; }
+
+  /* line 89, mobile.sass */
+  .header-cart {
+    width: 250px; }
+
+  /* line 91, mobile.sass */
+  .search-wrapper {
+    width: calc(100% - 250px - 325px);
+    padding-right: 0;
+    padding-left: 45px; } }
+@media(max-width: 500px) {
+  /* line 100, mobile.sass */
+  .col-rxs {
+    width: 100%; } }
+@media(min-width: 501px) and (max-width: 767px) {
+  /* line 103, mobile.sass */
+  .col-rxs {
+    float: left;
+    width: 50%; } }
+
+/*# sourceMappingURL=mobile.css.map */
