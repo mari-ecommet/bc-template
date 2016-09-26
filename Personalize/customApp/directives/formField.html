@@ -1,7 +1,8 @@
-<!-- variável field -->
-<!-- ng-if="item.data.retorno == 'hex'" -->
-<div class="form-group" >
-  {{result[index]}}
-  <input type="text"
-  ng-model="result[index].value" ng-init="result[index].value = item.data.value" ng-value="item.data.value"/>
+<div ng-if="atributo.data.tipo == 'hex'">
+  <input type="text">
+</div>
+
+<div ng-if="atributo.data.tipo == 'radio'">
+  <div ng-repeat="opcao in atributo.data.opcoes">
+  </div>
 </div>
