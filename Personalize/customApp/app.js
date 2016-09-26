@@ -13,40 +13,39 @@ var customApp = angular.module("CustomApp", [])
   };
   return service;
 }])
-.factory("FormService", ['$http', function($http){
+.factory("FormService", ['$http', "$q", function($http, $q){
   var url = "../Site/tema/teste/form.json";
   var service = {
     getFormFields : function(){
-      $http.get(url).then(function(data){
-
-        for (key in data.data) {
-          console.log(key)
-        }
-        console.log(JSON.parse(data.data))
+      var deferred = $q.defer();
+      $http.get(url).then(function(result){
+        deferred.resolve(result.data);
+      },function (data, status, headers, config) {
+        deferred.reject(undefined);
       });
+      return deferred.promise;
     }
   }
+
   return service;
 }])
 .controller("MainController", ['$scope', 'WebFonts', 'FormService' ,function($scope, webFontes, formService){
-  //promise required
-  $scope.fields = formService.getFormFields();
+  formService.getFormFields().then(function(valor){
+    $scope.fields = valor;
+    console.log(valor)
+  });
+  $scope.result =[]
+  $scope.submit = function(){
+    var url = "" // url do serviço de salvar as alterações
+    console.log($scope.result)
+  }
 
 }])
 
-customApp.directive("formField", function(){
+customApp.directive("formfield", function(){
   return{
     restrict : "E",
-    templateUrl: "directives/formField.html",
-    link: function(){
-
-    }
-  }
-})
-
-
-customApp.directive("radioField", function(){
-  return{
-    restrict: "E"
+    scope: true,
+    templateUrl: "customApp/directives/formField.html"
   }
 })

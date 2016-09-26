@@ -1,4 +1,7 @@
 <!-- variável field -->
-<div class="form-group">
-  <label for="" ng-bind="field"></label>
+<!-- ng-if="item.data.retorno == 'hex'" -->
+<div class="form-group" >
+  {{result[index]}}
+  <input type="text"
+  ng-model="result[index].value" ng-init="result[index].value = item.data.value" ng-value="item.data.value"/>
 </div>

@@ -1,0 +1,21 @@
+[
+  {
+    "id" : "titulo_color",
+    "elemento" : "titulo",
+    "atributo" : "color",
+    "label" : "Cor do Tìtulo",
+    "data" : {
+      "retorno" : "hex",
+      "valor" : "#ff0000"
+    }
+  },
+  {
+    "elemento" : "titulo",
+    "atributo" : "font-family",
+    "label" : "Fonte",
+    "data" : {
+      "retorno" : "fonte",
+      "valor" : "Open Sans"
+    }
+  }
+]

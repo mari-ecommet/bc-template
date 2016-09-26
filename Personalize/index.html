@@ -10,20 +10,23 @@
   <body ng-app="CustomApp">
     <div ng-controller="MainController as ctrl" class="container">
 
-
       <form class="" ng-submit="submit()">
-        <div class="form-group" ng-repeat="(index, item) in formItems">
+        <div class="form-group" ng-repeat="(key, item) in fields">
+          <h1>{{key}}</h1>
+          <div class="form-group" ng-repeat="(key_atributo, atributo) in item">
+          <h3>{{key_atributo}}</h3>
+          <label ng-bind="atributo.label"></label>
+          <input type="hidden">
+          
+          {{atributo.data.valor}}
+          {{atributo.data.tipo}}
+          {{atributo.data.opcoes}}
 
-          <label class="" for="{{item.chave}}" ng-bind="item.label"></label>
-          <input ng-init="result[index].chave = item.chave" ng-value="item.chave" ng-model="result[index].chave" type="hidden">
-          <input ng-init="result[index].atributo = item.atributo" ng-value="item.atributo" ng-model="result[index].atributo" type="hidden">
-          <input ng-init="result[index].item = item.item" ng-value="item.item" ng-model="result[index].item" type="hidden">
 
-          <!-- <input type="text" colorpicker="hex" ng-init="result[$index].valor = item.valor" ng-value="item.valor" ng-model="result[$index].valor" > -->
-          <component></component>
+          <formfield></formfield>
 
         </div>
-        <input type="submit" value="Enviar">
+        <input type="submit" class="btn btn-default" value="Enviar">
       </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
